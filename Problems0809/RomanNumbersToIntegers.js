@@ -26,8 +26,8 @@ const getNumberFromRomanNumber = romanNumber => {
 const transformRomanNumber = romanNumber => {
 	let totalX = 0;
 	let getNumberFromRemainingRoman;
-	const transformedRomanNumberArray = Array.from(romanNumber.toLowerCase());
-	for (el of transformedRomanNumberArray) {
+	const transformedRomanNumber = romanNumber.trim().toLowerCase();
+	for (el of transformedRomanNumber) {
 		if (el === 'x') {
 			totalX++;
 			continue;
@@ -36,7 +36,7 @@ const transformRomanNumber = romanNumber => {
 	}
 
 	getNumberFromRemainingRoman = getNumberFromRomanNumber(
-		transformedRomanNumberArray.slice(totalX).join('')
+		transformedRomanNumber.slice(totalX)
 	);
 
 	if (getNumberFromRemainingRoman == -1) return 'Error: Invalid Roman Number';
@@ -44,4 +44,4 @@ const transformRomanNumber = romanNumber => {
 	return totalX * 10 + getNumberFromRemainingRoman;
 };
 
-console.log(transformRomanNumber('xxxxixsd'));
+console.log(transformRomanNumber('xxixd'));
