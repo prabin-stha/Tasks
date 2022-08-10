@@ -1,47 +1,46 @@
-const getNumberFromRomanNumber = romanNumber => {
-	switch (romanNumber) {
+function value(r) {
+	switch (r) {
 		case 'i':
 			return 1;
-		case 'ii':
-			return 2;
-		case 'iii':
-			return 3;
-		case 'iv':
-			return 4;
 		case 'v':
 			return 5;
-		case 'vi':
-			return 6;
-		case 'vii':
-			return 7;
-		case 'viii':
-			return 8;
-		case 'ix':
-			return 9;
+		case 'x':
+			return 10;
+		case 'l':
+			return 50;
+		case 'c':
+			return 100;
+		case 'd':
+			return 500;
+		case 'm':
+			return 1000;
 		default:
 			return -1;
 	}
-};
+}
 
-const transformRomanNumber = romanNumber => {
-	let totalX = 0;
-	let getNumberFromRemainingRoman;
-	const transformedRomanNumber = romanNumber.trim().toLowerCase();
-	for (el of transformedRomanNumber) {
-		if (el === 'x') {
-			totalX++;
-			continue;
+function convertRomanToInteger(inputStr) {
+	const str = inputStr.toLowerCase();
+	var num = 0;
+
+	for (i = 0; i < str.length; i++) {
+		var indexValue = value(str.charAt(i));
+		if (indexValue === -1) return 'Invalid Roman Number Format!';
+
+		if (i + 1 < str.length) {
+			var nextIndexValue = value(str.charAt(i + 1));
+
+			if (indexValue >= nextIndexValue) {
+				num = num + indexValue;
+			} else {
+				num = num + nextIndexValue - indexValue;
+				i++;
+			}
+		} else {
+			num = num + indexValue;
 		}
-		break;
 	}
+	return num;
+}
 
-	getNumberFromRemainingRoman = getNumberFromRomanNumber(
-		transformedRomanNumber.slice(totalX)
-	);
-
-	if (getNumberFromRemainingRoman == -1) return 'Error: Invalid Roman Number';
-
-	return totalX * 10 + getNumberFromRemainingRoman;
-};
-
-console.log(transformRomanNumber('xxixd'));
+console.log(convertRomanToInteger('DCII'));
