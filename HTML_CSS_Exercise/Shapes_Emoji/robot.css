@@ -1,0 +1,107 @@
+.robot__head {
+	position: relative;
+	margin: 50px;
+	height: 150px;
+	width: 150px;
+	background-color: #a4d9eb;
+	border: 5px solid #9bbcc2;
+	border-radius: 20px;
+}
+
+.robot__head::before,
+.robot__head::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 50px;
+	width: 10px;
+	background-color: #c90a0a;
+}
+
+.robot__head::before {
+	left: -15px;
+	border-radius: 5px 0 0 5px;
+}
+
+.robot__head::after {
+	right: -15px;
+	border-radius: 0 5px 5px 0;
+}
+
+.robot__light {
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.light-bulb {
+	transform: translateY(5px);
+	height: 30px;
+	width: 30px;
+	background-color: #ffa500;
+	border-radius: 50%;
+}
+
+.light-stick {
+	height: 15px;
+	width: 10px;
+	background-color: #808080;
+}
+
+.robot__eyes {
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.robot__eye {
+	height: 30px;
+	width: 30px;
+	background-color: white;
+	border: 5px solid #00b3ff;
+	border-radius: 50%;
+}
+
+.robot__nose {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 0;
+	width: 0;
+	background-color: transparent;
+	border-top: 0px;
+	border-bottom: 30px solid #c90a0a;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+}
+
+.robot__mouth {
+	position: absolute;
+	display: flex;
+	padding: 0 10px;
+	justify-content: space-between;
+	bottom: 25px;
+	left: 50%;
+	transform: translate(-50%);
+	height: 25px;
+	width: 100px;
+	background-color: #dedede;
+	border: 1px solid black;
+	border-radius: 20px;
+}
+
+.teeth {
+	width: 5px;
+	height: 100%;
+	background-color: black;
+}

@@ -1,0 +1,14 @@
+.image-container {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	height: 70vh;
+	width: 100%;
+}
+
+img {
+	width: 100%;
+	display: block;
+	pointer-events: none;
+}

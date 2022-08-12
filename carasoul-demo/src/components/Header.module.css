@@ -1,0 +1,25 @@
+header {
+	background-color: #042541;
+}
+
+.container {
+	max-width: 1200px;
+	padding: 2rem 0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	flex-basis: 10%;
+}
+
+.img {
+	padding: 2px;
+	background-color: white;
+	border-radius: 5px;
+}

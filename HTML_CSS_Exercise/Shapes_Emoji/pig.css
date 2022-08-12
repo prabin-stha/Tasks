@@ -1,0 +1,95 @@
+:root {
+	--eye-height: 50px;
+	--eye-width: 50px;
+	--nose-height: 60px;
+	--nose-width: 100px;
+}
+
+.pig__head {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin-top: 20px;
+	background-color: #ffc0cb;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+.pig__ear {
+	position: absolute;
+	z-index: -1;
+	height: 50px;
+	width: 50px;
+	background-color: #ffc0cb;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+.pig__left-ear {
+	left: 10px;
+	transform: translate(5px, -10px);
+}
+
+.pig__right-ear {
+	right: 10px;
+	transform: translate(-5px, -10px);
+}
+
+.pig__eye {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 40px;
+	height: var(--eye-height);
+	width: var(--eye-width);
+	background-color: white;
+	border-radius: 50%;
+	border: 2px solid black;
+}
+
+.pig__left-eye {
+	left: 30px;
+}
+
+.pig__right-eye {
+	right: 30px;
+}
+
+.pupil {
+	height: calc(var(--eye-height) / 2);
+	width: calc(var(--eye-width) / 2);
+	background-color: black;
+	border-radius: 50%;
+}
+
+.pig__nose {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: var(--nose-height);
+	width: var(--nose-width);
+	background-color: #f57187;
+	border-radius: 35%;
+	border: 2px solid black;
+}
+
+.nostrils {
+	margin: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.nostril {
+	height: calc(0.5 * var(--nose-height));
+	width: calc(0.25 * var(--nose-width));
+	background-color: black;
+	border-radius: 50%;
+}
