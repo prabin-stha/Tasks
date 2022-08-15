@@ -17,7 +17,7 @@ const Example = () => {
 			duration='500'
 			indicatorIconButtonProps={{
 				style: {
-					padding: '5px',
+					padding: '2px',
 					margin: '0 10px',
 					backgroundColor: '#86827e',
 					color: 'transparent',
@@ -27,7 +27,7 @@ const Example = () => {
 			}}
 			activeIndicatorIconButtonProps={{
 				style: {
-					padding: '5px 20px',
+					padding: '2px 16px',
 					backgroundColor: '#ffffff',
 					borderRadius: '30px',
 				},

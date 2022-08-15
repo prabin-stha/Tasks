@@ -10,12 +10,73 @@
 	</head>
 	<body>
 		<div class="container">
-			<ul class="steps-list">
-				<li class="step-list">
-					<div class="step">1</div>
-					<div class="step-title"></div>
-				</li>
-			</ul>
+			<div class="stepper-container">
+				<ul class="steps-lists">
+					<div class="line"></div>
+					<li class="step-list">
+						<div class="step active">1</div>
+						<div class="step-title">
+							<span>Product Selection</span>
+						</div>
+					</li>
+					<li class="step-list">
+						<div class="step">2</div>
+						<div class="step-title">
+							<span>Payment Method</span>
+						</div>
+					</li>
+					<li class="step-list">
+						<div class="step">3</div>
+						<div class="step-title"><span>Payment Form</span></div>
+					</li>
+					<li class="step-list">
+						<div class="step">4</div>
+						<div class="step-title">
+							<span>Purchase Success</span>
+						</div>
+					</li>
+				</ul>
+
+				<form>
+					<div class="form-elements">
+						<div class="form-element">
+							<input
+								type="checkbox"
+								name="algo-expert"
+								id="algo-expert"
+							/>
+							<label for="algo-expert">AlgoExpert</label>
+						</div>
+						<div class="form-element">
+							<input
+								type="checkbox"
+								name="systems-expert"
+								id="systems-expert"
+							/>
+							<label for="algo-expert">SystemsExpert</label>
+						</div>
+						<div class="form-element">
+							<input
+								type="checkbox"
+								name="ml-expert"
+								id="ml-expert"
+							/>
+							<label for="ml-expert">MLExpert</label>
+						</div>
+						<div class="form-element">
+							<input
+								type="checkbox"
+								name="frontend-expert"
+								id="frontend-expert"
+							/>
+							<label for="frontend-expert">FrontendExpert</label>
+						</div>
+					</div>
+					<div class="form-button">
+						<input type="button" value="Continue" />
+					</div>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
