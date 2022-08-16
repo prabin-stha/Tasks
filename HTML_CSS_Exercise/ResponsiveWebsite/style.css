@@ -1,0 +1,311 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar {
+	width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: darkgrey;
+	outline: 1px solid slategrey;
+}
+
+html {
+	scroll-padding-top: 4rem;
+	scroll-behavior: smooth;
+}
+
+body.overflow-none {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0.5rem 2rem;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	background: #fd746c;
+	background: -webkit-linear-gradient(to right, #ff9068, #fd746c);
+	background: linear-gradient(to right, #ff9068, #fd746c);
+	box-shadow: 1.3px 3.7px 2.2px rgba(0, 0, 0, 0.015),
+		3.2px 8.8px 5.3px rgba(0, 0, 0, 0.029),
+		6px 16.7px 10px rgba(0, 0, 0, 0.043),
+		10.7px 29.7px 17.9px rgba(0, 0, 0, 0.06),
+		20.1px 55.6px 33.4px rgba(0, 0, 0, 0.079),
+		48px 133px 80px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-size: 2rem;
+	color: #333;
+	cursor: pointer;
+	transition: opacity, color 200ms ease-out;
+}
+
+.logo:hover {
+	transform: scale(1.4);
+	color: white;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: -50%;
+	right: 100%;
+	padding-top: min(30vh, 8rem);
+	background-color: #4682b4;
+	transition: all 200ms ease-out;
+}
+
+.nav-items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+}
+
+.nav-item a {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: white;
+	letter-spacing: 2px;
+	font-weight: 500;
+	opacity: 0.8;
+}
+.nav-item a i {
+	font-size: 1.5rem;
+	opacity: 0.8;
+}
+
+.nav-item.active a {
+	font-weight: 700;
+	text-transform: uppercase;
+	opacity: 1;
+}
+
+.nav-item.active a i {
+	opacity: 1;
+}
+
+#menu {
+	visibility: hidden;
+}
+
+#menu:checked ~ nav {
+	left: 0;
+	right: 0;
+}
+
+label[for='menu'] {
+	font-size: 1.75rem;
+}
+
+.close {
+	position: absolute;
+	top: 1.4rem;
+	right: 1.4rem;
+	background: transparent;
+	color: white;
+	font-size: 2rem;
+	border: none;
+}
+
+@media (min-width: 48rem) {
+	body {
+		font-size: 12px;
+	}
+
+	nav {
+		position: static;
+		padding-top: 0;
+		background-color: transparent;
+	}
+
+	.nav-items {
+		flex-direction: row;
+	}
+
+	.nav-item a {
+		position: relative;
+		display: inline;
+		color: #333;
+		transition: all 200ms ease-out;
+	}
+
+	.nav-item a i {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0.2;
+		font-size: 3rem;
+		color: white;
+		z-index: -1;
+		transition: all 300ms ease-out;
+	}
+
+	.nav-item.active a i {
+		opacity: 0.6;
+	}
+
+	.nav-item a:hover {
+		color: white;
+	}
+
+	.nav-item a:hover i {
+		color: #333;
+		opacity: 0.1;
+		font-size: 5rem;
+	}
+
+	#menu,
+	label[for='menu'] {
+		display: none;
+	}
+
+	.close {
+		display: none;
+	}
+}
+
+section.banner {
+	position: relative;
+	background: url('./img/background.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 35rem;
+}
+
+section#about {
+	background-color: #333;
+	color: white;
+	padding: 2rem 0;
+}
+
+#about h1,
+#contact h1 {
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
+#about p {
+	margin-bottom: 2rem;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4rem;
+	justify-content: center;
+	padding-top: 2rem;
+}
+
+.card {
+	position: relative;
+	height: 300px;
+	width: 250px;
+	padding: 2rem;
+	background-color: white;
+	color: #333;
+	border-radius: 10px;
+}
+
+.card__title {
+	font-size: 1.2rem;
+	padding-bottom: 1rem;
+}
+
+.card__description {
+	font-size: 12px;
+}
+
+.card__button {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	padding: 0.3rem 0.4rem;
+	border-radius: 5px;
+	border: none;
+	background-color: #333;
+	color: white;
+	cursor: pointer;
+}
+
+#contact {
+	padding: 2rem 0;
+}
+
+#contact h1 {
+	color: #333;
+}
+
+#contact textarea {
+	resize: none;
+	height: 150px;
+	width: 300px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-element {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1rem;
+}
+
+.form-button {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.form-button button {
+	background-color: #333;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 0.3rem 0.4rem;
+}
+
+footer {
+	background-color: #333;
+	height: 7rem;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
